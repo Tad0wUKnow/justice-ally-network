@@ -2,21 +2,13 @@
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-interface FeatureCardProps {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  delay?: number;
-  className?: string;
-}
-
 const FeatureCard = ({ 
   title, 
   description, 
   icon, 
   delay = 0,
   className 
-}: FeatureCardProps) => {
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
