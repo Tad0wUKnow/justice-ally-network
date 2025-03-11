@@ -17,6 +17,7 @@ import Lawyers from "./pages/Lawyers";
 import Resources from "./pages/Resources";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import MyCases from "./pages/MyCases";
 
 const queryClient = new QueryClient();
 
@@ -32,11 +33,19 @@ const App = () => (
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
-            {/* Protected routes */}
+            {/* Public routes */}
             <Route path="/" element={<Index />} />
+            <Route path="/resources" element={<Resources />} />
+            
+            {/* Protected routes */}
             <Route path="/submit" element={
               <ProtectedRoute>
                 <SubmitCase />
+              </ProtectedRoute>
+            } />
+            <Route path="/my-cases" element={
+              <ProtectedRoute>
+                <MyCases />
               </ProtectedRoute>
             } />
             <Route path="/community" element={
@@ -54,7 +63,6 @@ const App = () => (
                 <Lawyers />
               </ProtectedRoute>
             } />
-            <Route path="/resources" element={<Resources />} />
             
             {/* Not found route */}
             <Route path="*" element={<NotFound />} />

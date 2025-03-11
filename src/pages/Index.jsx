@@ -5,8 +5,13 @@ import HeroSection from '@/components/HeroSection';
 import FeatureCard from '@/components/FeatureCard';
 import PageTransition from '@/components/PageTransition';
 import { ArrowRight, Shield, Scale, Users, BookOpen, Activity, Database } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const Index = () => {
+  const { currentUser } = useAuth();
+  
   const features = [
     {
       title: "Legal Resources",
@@ -50,6 +55,29 @@ const Index = () => {
     <PageTransition>
       <main className="overflow-hidden">
         <HeroSection />
+        
+        {!currentUser && (
+          <div className="py-8 bg-primary/10">
+            <div className="container mx-auto px-4">
+              <Card className="border-primary/20">
+                <CardHeader>
+                  <CardTitle className="text-center">Access All Features</CardTitle>
+                  <CardDescription className="text-center">
+                    Please log in or create an account to access all features
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex justify-center gap-4">
+                  <Link to="/login">
+                    <Button>Log In</Button>
+                  </Link>
+                  <Link to="/signup">
+                    <Button variant="outline">Sign Up</Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
         
         {/* Features section */}
         <section className="py-20 bg-background relative">
