@@ -61,7 +61,7 @@ const Index = () => {
             <div className="container mx-auto px-4">
               <Card className="border-primary/20">
                 <CardHeader>
-                  <CardTitle className="text-center">Access All Features</CardTitle>
+                  <CardTitle className="text-center">WeMen - Your Ally in Justice</CardTitle>
                   <CardDescription className="text-center">
                     Please log in or create an account to access all features
                   </CardDescription>
@@ -89,7 +89,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 className="text-3xl font-medium tracking-tight mb-4"
               >
-                Comprehensive Support System
+                WeMen Support System
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0 }}
@@ -127,7 +127,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 className="text-3xl font-medium tracking-tight mb-4"
               >
-                Ready to Take the Next Step?
+                Ready to Join WeMen?
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0 }}
